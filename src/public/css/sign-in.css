@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+}
+
+/* buttons */
+
+.primary-btn {
+	display: inline-block;
+	font-size: 15px;
+	padding: 14px 40px 12px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: 700;
+	background: #88C417;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.site-btn {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 14px 30px 12px;
+	background: #88C417;
+	border: none;
+	letter-spacing: 1px;
+	border-radius: 2px;
+}
+
+.set-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+/*---------------------
+  Hero
+-----------------------*/
+
+.hero {
+	padding: 170px 0;
+}
+
+.hero__text {
+	padding-top: 90px;
+}
+
+.hero__text h2 {
+	font-size: 50px;
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 60px;
+	margin-bottom: 65px;
+}
+
+.hero__text p {
+	color: #ffffff;
+	margin-bottom: 60px;
+}
+
+.hero__text .primary-btn {
+	margin-right: 16px;
+}
+
+.hero__text .primary-btn.howit-btn {
+	background: #223060;
+}
+
+.hero__form {
+	background: #ffffff;
+	padding: 50px 30px 45px;
+	border-radius: 2px;
+}
+
+.hero__form h3 {
+	color: #323232;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.hero__form form .input-list {
+	overflow: hidden;
+	margin-right: -20px;
+}
+
+.hero__form form .input-list.last .input-list-item {
+	margin-bottom: 30px;
+}
+
+.hero__form form .input-list .input-list-item {
+	width: calc(50% - 20px);
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.hero__form form .input-list .input-list-item p {
+	color: #323232;
+	margin-bottom: 12px;
+}
+
+.hero__form form .input-list .input-list-item input {
+	width: 100%;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background: #f6f6f6;
+	padding-left: 15px;
+}
+
+.hero__form form .input-full-width {
+	margin-bottom: 20px;
+}
+
+.hero__form form .input-full-width p {
+	color: #323232;
+	margin-bottom: 12px;
+}
+
+.hero__form form .input-full-width input {
+	width: 100%;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background: #f6f6f6;
+	padding-left: 15px;
+}
+
+.hero__form form button {
+	width: 100%;
+}
