@@ -35,6 +35,61 @@ body {
 	background-position: top center;
 }
 
+
+/*---------------------
+  Nav
+---------------------*/
+
+.header__nav {
+	text-align: center;
+	margin-right: 10px;
+	padding: 0px 0px 0px;
+}
+
+.header__menu {
+	display: inline-block;
+}
+
+.header__menu ul li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 65px;
+	position: relative;
+}
+
+.header__menu ul li.active a:after {
+	width: 100%;
+	opacity: 1;
+}
+
+.header__menu ul li:hover a:after {
+	width: 100%;
+	opacity: 1;
+}
+
+.header__menu ul li a {
+	font-size: 18px;
+	color: #323232;
+	font-weight: 700;
+	display: block;
+	padding: 5px 0;
+	position: relative;
+}
+
+.header__menu ul li a:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 0%;
+	background: #88C417;
+	content: "";
+	opacity: 0;
+	-webkit-transition: all, 0.5s;
+	-o-transition: all, 0.5s;
+	transition: all, 0.5s;
+}
+
 /*---------------------
   Hero
 -----------------------*/

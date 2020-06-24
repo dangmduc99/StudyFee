@@ -1,39 +1,42 @@
-pragma solidity ^0.5.0;
+//SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.6.9;
 pragma experimental ABIEncoderV2;
 
 contract UserManager {
-    struct User {
+    struct Student {
+        string name;
+        string std_id;
         string public_key;
         string private_key;
         string password;
-        string role;
-    }
-
-    struct Student {
-        string name;
-        uint std_id;
+        bool is_student;
     }
 
     struct School {
         string addr;
     }
 
-    address server = address(0x1223434t5y);
-    mapping (string => User) public users;
     mapping (string => Student) public students;
     mapping (string => School) public schools;
 
-    function createUser(string memory userName, string memory _private_key, string memory _public_key, string memory _password, string _role) {
-        require(msg.sender == server, "Permission denied!");
-        users[userName] = User(_public_key, _private_key, _password, _role);
+    function signUp(string memory std_id,
+                    string memory _name,
+                    string memory _public_key,
+                    string memory _private_key,
+                    string memory _password) public {
+        students[std_id] = Student(std_id, _name, _public_key, _private_key, _password, true);
     }
 
-    function getUser(string memory userName) public view returns (User memory) {
-        User storage user = users[userName];
-        return user;
+    function signIn(string memory std_id) public view returns (Student memory) {
+        Student storage student = students[std_id];
+        return student;
     }
 
-    function updateUser() {
-        
+    function updateStudent(string memory std_id,
+                        string memory _name,
+                        string memory _password) public {
+        Student storage student = students[std_id];
+        student.name = _name;
+        student.password = _password;
     }
 }

@@ -29,24 +29,59 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="hero__text">
-                        <h2>Study Fee Payment with Bitcoin</h2>
+                        <h2>Pay Study Fee with Bitcoin</h2>
                         <p>Apply for our business loan in minutes, without painful</p>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-2">
                     <div class="hero__form">
-                        <h3>Sign in</h3>
-                        <form action="#" method="POST">
-                            <div class="input-full-width">
-                                <p>Student ID:</p>
-                                <input type="text" name="stdId">
-                            </div>
-                            <div class="input-full-width">
-                                <p>Password</p>
-                                <input type="password" name="stdPw">
-                            </div>
-                            <button type="submit" class="site-btn">Sign in</button>
-                        </form>
+                        <div class="header__nav">
+                            <nav class="header__menu">
+                                <ul>
+                                    <li><a href="#" onclick="change1()">Sign in</a></li>
+                                    <li><a href="#" onclick="change2()">Sign up</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <!-- Form sign in -->
+
+                        <div class="signin" id="signin" style="display: block;">
+                            <form action="#" method="POST">
+                                <div class="input-full-width">
+                                    <p>Student ID</p>
+                                    <input type="text" name="stdId">
+                                </div>
+                                <div class="input-full-width">
+                                    <p>Password</p>
+                                    <input type="password" name="stdPw">
+                                </div>
+                                <button type="submit" class="site-btn">Sign In</button>
+                            </form>
+                        </div>
+
+                        <!-- Form sign up -->
+
+                        <div class="signup" id="signup" style="display: none;">
+                            <form action="#" method="POST" >
+                                <div class="input-list">
+                                    <div class="input-list-item">
+                                        <p>Student ID</p>
+                                        <input type="text">
+                                    </div>
+                                    <div class="input-list-item">
+                                        <p>Password</p>
+                                        <input type="password">
+                                    </div>
+                                </div>
+                                <div class="input-full-width">
+                                    <p>Student Name</p>
+                                    <input type="text">
+                                </div>
+                                <button type="submit" class="site-btn">Sign Up</button>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -56,6 +91,18 @@
 
 
     <!-- Js Plugins -->
+    <script>
+        function change1(){
+            document.getElementById("signin").style.display = "block";
+            document.getElementById("signup").style.display = "none";
+        }
+
+        function change2(){
+            document.getElementById("signin").style.display = "none";
+            document.getElementById("signup").style.display = "block";
+        }
+
+    </script>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.nice-select.min.js"></script>
