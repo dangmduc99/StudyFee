@@ -5,31 +5,46 @@ pragma experimental ABIEncoderV2;
 contract UserManager {
     struct Student {
         string name;
-        string std_id;
-        string public_key;
-        string private_key;
+        string studentId;
         string password;
-        bool is_student;
+        bool isStudent;
+    }
+
+    struct Transaction {
+        string transactionId;
+        string studentId;
+        uint schoolYear;
+        uint studyFee;
+        string state;
+        string dateStart;
+        string dueDate;
+        string paidDate;
     }
 
     struct School {
+        string userName;
+        string password;
         string addr;
     }
 
+
     mapping (string => Student) public students;
+    mapping (string => Transaction) public transactions;
     mapping (string => School) public schools;
 
-    function signUp(string memory std_id,
+    function signUp(string memory studentId,
                     string memory _name,
-                    string memory _public_key,
-                    string memory _private_key,
                     string memory _password) public {
-        students[std_id] = Student(std_id, _name, _public_key, _private_key, _password, true);
+        students[studentId] = Student(studentId, _name, _password, true);
     }
 
-    function signIn(string memory std_id) public view returns (Student memory) {
-        Student storage student = students[std_id];
-        return student;
+    function signIn(string memory studentId, string memory _password) public view returns (Student memory) {
+        Student storage student = students[studentId];
+        if (student.password == _password) {
+            return student;
+        } else {
+            
+        }
     }
 
     function updateStudent(string memory std_id,
