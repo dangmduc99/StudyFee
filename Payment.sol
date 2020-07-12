@@ -3,9 +3,9 @@ pragma solidity ^0.6.9;
 pragma experimental ABIEncoderV2;
 
 contract Manager {
-    struct Student {
-        string studentId;
-        string studentName;
+    struct User {
+        string userName;
+        string name;
         string password;
         bool isStudent;
         string addr;
@@ -41,7 +41,7 @@ contract Manager {
     }
 
 
-    mapping (string => Student) public students;
+    mapping (string => User) public students;
     mapping (string => Subject) public subjects;
     mapping (string => Class) public classes;
     mapping (string => Transaction) public transactions;
@@ -49,17 +49,20 @@ contract Manager {
 
 
     //for sign up
-    function createStudent (string memory _studentId,
-                    string memory _studentName,
-                    string memory _password) public {
-        students[_studentId] = Student(_studentId, _studentName, _password, true, '', '', '');
+    function createUser (string memory _userName,
+                    string memory _name,
+                    string memory _password,
+                    string memory _address,
+                    string memory _publicKey,
+                    string memory _privateKey) public {
+        students[_studentId] = Student(_studentId, _studentName, _password, true, _address, _publicKey, _privateKey);
     }
 
 
-    //for sign in
-    function getStudent (string memory studentId) public view returns (Student memory) {
-        Student storage student = students[studentId];
-        return student;
+    //for log in
+    function getUser (string memory userName) public view returns (User memory) {
+        User storage user = users[userName];
+        return user;
     }
 
     //for update profile
