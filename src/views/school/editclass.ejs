@@ -61,10 +61,11 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-inline mt-2 mt-md-0">
+                        <form class="form-inline mt-2 mt-md-0" method="POST" action="/edit">
                             <div class="col-md-12">
                                 <h6>Class ID</h6>
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search"
+                                    aria-label="Search">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                             </div>
                         </form>
@@ -75,7 +76,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Create class</h4>
+                                <h4>Edit class</h4>
                                 <hr>
                             </div>
                         </div>
@@ -83,22 +84,26 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-12">
-                                      <div class="form-group row">
-                                        <label for="classId" class="col-4 col-form-label">Class ID</label>
-                                        <h5>123456</h5>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label for="subjectId" class="col-4 col-form-label">Subject ID</label>
-                                        <h6>MI1111</h6>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label for="subject" class="col-4 col-form-label">Subject</label>
-                                        <h6>Giải tích I</h6>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label for="weight" class="col-4 col-form-label">Weight</label>
-                                        <h6>3</h6>
-                                      </div>
+                                        <div class="form-group row">
+                                            <label for="classId" class="col-4 col-form-label">Class ID</label>
+                                            <h5 class="text-info">123456</h5>
+                                            <input type="text" class="edit-input" />
+                                            <div class="controlls">
+                                                <a class="edit" href="#">Edit</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="subjectId" class="col-4 col-form-label">Subject ID</label>
+                                            <h6>MI1111</h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="subject" class="col-4 col-form-label">Subject</label>
+                                            <h6>Giải tích I</h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="weight" class="col-4 col-form-label">Weight</label>
+                                            <h6>3</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -115,6 +120,21 @@
             <h6>1st. Dai Co Viet str., Hai Ba Trung, Ha Noi</h6>
         </div>
     </footer>
+    <script>
+        $(document).ready(function () {
+            $('a.edit').click(function () {
+                var dad = $(this).parent().parent();
+                dad.find('label').hide();
+                dad.find('input[type="text"]').show().focus();
+            });
+
+            $('input[type=text]').focusout(function () {
+                var dad = $(this).parent();
+                $(this).hide();
+                dad.find('label').show();
+            });
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

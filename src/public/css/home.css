@@ -20,3 +20,6 @@ main > .container {
     font-size: 80%;
   }
   
+.edit-input {
+    display:none;
+}

@@ -7,8 +7,9 @@ module.exports.login = function(req, res) {
 };
 
 module.exports.postLogin = function(req, res) {
-    var userName = req.body.userName;
-    var password = req.body.password;
+    var userName = req.body.inputUserName;
+    var password = req.body.inputPassword;
+    var rememberMe = req.body.rememberMe;
   
     //get_user()
     async function getUser(userName){
@@ -53,7 +54,7 @@ module.exports.postLogin = function(req, res) {
       return;
     }
   
-    res.redirect('/');
+    res.redirect('/student');
 };
 
 module.exports.signup = function(req, res) {

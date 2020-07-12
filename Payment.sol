@@ -98,6 +98,7 @@ contract Manager {
         registeds[_studentId] = Registed(_studentId, _studyYear, _classIdList);
     }
 
+    //for save history
     function payFee (string memory _userName,
                     string memory _studyYear,
                     string memory _amount,
@@ -106,12 +107,5 @@ contract Manager {
         payFees[_transactionId] = PayFee(_userName, _studyYear, _amount, _date, _transactionId);
     }
 
-    // //for save transaction information
-    // function transaction (string memory _transactionId,
-    //                     string memory _studentId,
-    //                     string memory _receiver,
-    //                     string memory _amount,
-    //                     string memory _dateTime) public {
-    //     transactions[_transactionId] = Transaction(_transactionId, _studentId, _receiver, _amount, _dateTime);
-    // }
+    //tranfer
 }
