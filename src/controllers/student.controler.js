@@ -9,7 +9,7 @@ module.exports.postProfile = function(req, res) {
 }
 
 module.exports.updateProfile = function(req, res) {
-    res.render('student/home');
+    res.render('student/updateprofile');
 }
 
 module.exports.postUpdateProfile = function (req, res) {
@@ -70,7 +70,7 @@ module.exports.postRegisterClass = function (req, res) {
 }
 
 module.exports.studyFee = function (req, res) {
-    //study fee
+    res.render('student/studyfee');
 }
 
 module.exports.postStudyFee = function (req, res) {

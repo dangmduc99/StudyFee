@@ -17,3 +17,5 @@ router.post('/registerclass', controller.postRegisterClass);
 router.get('/studyfee', controller.studyFee);
 
 router.post('/studyfee', controller.postStudyFee);
+
+module.exports = router;

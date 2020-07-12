@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var sessionMiddleware = require('./src/middlewares/session.middleware');
+
 var authRoute = require('./src/routes/auth.route');
 var studentRoute = require('./src/routes/student.route');
 var schoolRoute = require('./src/routes/school.route');
@@ -15,7 +17,7 @@ app.set('views', './src/views');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(express.static('src/public'));
+app.use(express.static('./src/public'));
 // app.use(session({
 //     secret: 'mysecret',
 //     cookie: {

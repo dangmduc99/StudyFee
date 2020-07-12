@@ -11,3 +11,5 @@ router.post('/create', controller.postCreateClass);
 router.get('/edit', controller.editClass);
 
 router.post('/edit', controller.postEditClass);
+
+module.exports = router;

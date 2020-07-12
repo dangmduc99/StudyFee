@@ -60,8 +60,8 @@
     <div class="row">
       <div class="col-md-3 ">
         <div class="list-group ">
-          <a href="/student/" class="list-group-item list-group-item-action active">Profile</a>
-          <a href="/student/update" class="list-group-item list-group-item-action">Update Profile</a>
+          <a href="/student" class="list-group-item list-group-item-action">Profile</a>
+          <a href="/student/update" class="list-group-item list-group-item-action active">Update Profile</a>
         </div>
       </div>
       <div class="col-md-9">
@@ -75,26 +75,45 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div class="form-group row">
-                  <label for="name" class="col-4 col-form-label">Name</label>
-                  <h5>Đặng Minh Đức</h5>
-                </div>
-                <div class="form-group row">
-                  <label for="userName" class="col-4 col-form-label">Student ID</label>
-                  <h6>20173037</h6>
-                </div>
-                <div class="form-group row">
-                  <label for="address" class="col-4 col-form-label">Address</label>
-                  <h6>0x123456789abcdef</h6>
-                </div>
+                <form>
+                    <div class="form-group row">
+                      <label for="name" class="col-4 col-form-label">Name</label> 
+                      <div class="col-8">
+                        <input id="name" name="name" placeholder="Đặng Minh Đức" class="form-control here" required="required" type="text">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="username" class="col-4 col-form-label">Student ID</label> 
+                      <div class="col-8">
+                        <input id="username" name="username" placeholder="20173037" class="form-control here" type="text">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="newpassword" class="col-4 col-form-label">New Password</label> 
+                      <div class="col-8">
+                        <input id="newpassword" name="newpassword" placeholder="New Password" class="form-control here" type="password">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="confirmpw" class="col-4 col-form-label">Confirm new password</label> 
+                        <div class="col-8">
+                          <input id="confirmpw" name="confirmpw" placeholder="Confirm new password" class="form-control here" type="password">
+                        </div>
+                      </div> 
+                    <div class="form-group row">
+                      <div class="offset-4 col-8">
+                        <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
+                      </div>
+                    </div>
+                  </form>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  <br>
   <footer class="footer mt-auto py-3">
     <div class="container" style="text-align: center;">
       <span class="text-muted">Hanoi University of Science and Technology.</span>

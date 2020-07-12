@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="/css/home.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Payment study fee</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Register Class</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Study Fee</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="text-center" style="margin-top: 100px;">
+        <form>
+            <div class="form-group row">
+                <label for="select" class="col-4 col-form-label">Study Year</label>
+                <div class="col-3">
+                    <select id="select" name="select" class="custom-select">
+                        <option value="20191">20191</option>
+                        <option value="20192">20192</option>
+                        <option value="20193">20193</option>
+                        <option value="20201">20201</option>
+                        <option value="20202">20202</option>
+                        <option value="20203">20203</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="text" class="col-4 col-form-label">Class ID</label>
+                <div class="col-3">
+                    <input id="text" name="classId" placeholder="ClassID" class="form-control here" required="required"
+                        type="text">
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Subject ID</th>
+                        <th scope="col">Class ID</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col"><input type="checkbox" value="check_all"></th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>MI1111</td>
+                        <td>123456</td>
+                        <td>Giải tích I</td>
+                        <td>3</td>
+                        <td scope="col"><input type="checkbox" value="check"></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>MI1121</td>
+                        <td>654321</td>
+                        <td>Giải tích II</td>
+                        <td>3</td>
+                        <td scope="col"><input type="checkbox" value="check"></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>MI1131</td>
+                        <td>147896</td>
+                        <td>Giải tích III</td>
+                        <td>3</td>
+                        <td scope="col"><input type="checkbox" value="check"></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>MI1141</td>
+                        <td>123456</td>
+                        <td>Đại số</td>
+                        <td>3</td>
+                        <td scope="col"><input type="checkbox" value="check"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-outline-warning btn-sml">Delete class</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary">Submit registed form</button>
+        </form>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container" style="text-align: center;">
+            <span class="text-muted">Hanoi University of Science and Technology.</span>
+            <h6>1st. Dai Co Viet str., Hai Ba Trung, Ha Noi</h6>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="../assets/dist/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+</body>
+
+</html>
