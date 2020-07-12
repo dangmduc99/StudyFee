@@ -69,7 +69,11 @@ module.exports.postRegisterClass = function (req, res) {
     //register
 }
 
-module.exports.getStudyFee = function (req, res) {
+module.exports.studyFee = function (req, res) {
+    //study fee
+}
+
+module.exports.postStudyFee = function (req, res) {
     var schoolYear = req.body.schoolYear;
 
     async function getStudyFee(privateKey, userName, schoolYear) {

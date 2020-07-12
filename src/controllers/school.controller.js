@@ -2,7 +2,11 @@ module.exports.classManager = function(req, res) {
     res.render('school/classmanager');  //middleware check isStudent = false
 }
 
-module.exports.createClass = function(req, res) {
+module.exports.createClass = function (req, res) {
+  //create class
+}
+
+module.exports.postCreateClass = function(req, res) {
     var classId = req.body.classId;
     var subjectId = req.body.subjectId;
     var subject = req.body.subject;
@@ -49,4 +53,10 @@ module.exports.createClass = function(req, res) {
     }
 }
 
-module.exports
+module.exports.editClass = function (req, res) {
+  //edit class
+}
+
+module.exports.postEditClass = function (req, res) {
+  //post edit class
+}

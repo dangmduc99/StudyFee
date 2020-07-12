@@ -13,112 +13,105 @@ contract Manager {
         string privateKey;
     }
 
-    struct Subject {
-        string subjectId;
-        string subject;
-        string num;
-    }
-
     struct Class {
         string classId;
         string subjectId;
-        string classRoom;
+        string subject;
+        string weight;
     }
 
-    struct Transaction {
-        string transactionId;
-        string studentId;
-        string receiver;
+    struct Registed {
+        string userName;
+        string studyYear;
+        string[] classIdList;
+    }
+
+    struct PayFee {
+        string userName;
+        string studyYear;
         string amount;
-        string datetime;
+        string date;
+        string transactionId;
     }
-
-    struct StudyFee {
-        // string Id;
-        string studentId;
-        string studyFee;
-        string dueDate;
-    }
-
-
-    mapping (string => User) public students;
-    mapping (string => Subject) public subjects;
+    mapping (string => User) public users;
     mapping (string => Class) public classes;
-    mapping (string => Transaction) public transactions;
-    mapping (string => StudyFee) public studyFees;
+    mapping (string => Registed) public registeds;
+    mapping (string => PayFee) public payFees;
 
 
-    //for sign up
+    //for signup
     function createUser (string memory _userName,
                     string memory _name,
                     string memory _password,
                     string memory _address,
                     string memory _publicKey,
                     string memory _privateKey) public {
-        students[_studentId] = Student(_studentId, _studentName, _password, true, _address, _publicKey, _privateKey);
+        users[_userName] = User(_userName, _name, _password, true, _address, _publicKey, _privateKey);
     }
 
 
-    //for log in
+    //for login
     function getUser (string memory userName) public view returns (User memory) {
         User storage user = users[userName];
         return user;
     }
 
     //for update profile
-    function updateStudent (string memory studentId,
-                        string memory _studentName,
+    function updateUser (string memory userName,
+                        string memory _name,
                         string memory _password) public {
-        Student storage student = students[studentId];
-        student.studentName = _studentName;
-        student.password = _password;
-    }
-
-    //for create subject
-    function createSubject (string memory _subjectId,
-                        string memory _subject,
-                        string memory _num) public {
-        subjects[_subjectId] = Subject(_subjectId, _subject, _num);
-    }
-
-    //for edit subject
-    function editSubject (string memory subjectId,
-                        string memory _subject,
-                        string memory _num) public {
-        Subject storage subject = subjects[subjectId];
-        subject.subject = _subject;
-        subject.num = _num;
+        User storage user = users[userName];
+        user.name = _name;
+        user.password = _password;
     }
 
     //for create class
     function createClass (string memory _classId,
                         string memory _subjectId,
-                        string memory _classRoom) public {
-        classes[_classId] = Class(_classId, _subjectId, _classRoom);
+                        string memory _subject,
+                        string memory _weight) public {
+        classes[_classId] = Class(_classId, _subjectId, _subject, _weight);
     }
 
+    //for get class
+    function getClass (string memory classId) public view returns (Class memory) {
+        Class storage class = classes[classId];
+        return class;
+    }
+
+
     //for edit class
-    function editClass (string memory classId,
+    function editSubject (string memory classId,
                         string memory _subjectId,
-                        string memory _classRoom) public {
+                        string memory _subject,
+                        string memory _weight) public {
         Class storage class = classes[classId];
         class.subjectId = _subjectId;
-        class.classRoom = _classRoom;
+        class.subject = _subject;
+        class.weight = _weight;
     }
 
     //for register class
     function registerClass (string memory _studentId,
-                        string memory _studyFee,
-                        string memory _dueDate) public {
-        studyFees[_studentId] = StudyFee(_studentId, _studyFee, _dueDate);
+                        string memory _studyYear,
+                        string[] memory _classIdList) public {
+        registeds[_studentId] = Registed(_studentId, _studyYear, _classIdList);
     }
 
-    //for save transaction information
-    function transaction (string memory _transactionId,
-                        string memory _studentId,
-                        string memory _receiver,
-                        string memory _amount,
-                        string memory _dateTime) public {
-        transactions[_transactionId] = Transaction(_transactionId, _studentId, _receiver, _amount, _dateTime);
+    function payFee (string memory _userName,
+                    string memory _studyYear,
+                    string memory _amount,
+                    string memory _date,
+                    string memory _transactionId) public {
+        payFees[_transactionId] = PayFee(_userName, _studyYear, _amount, _date, _transactionId);
     }
+
+    // //for save transaction information
+    // function transaction (string memory _transactionId,
+    //                     string memory _studentId,
+    //                     string memory _receiver,
+    //                     string memory _amount,
+    //                     string memory _dateTime) public {
+    //     transactions[_transactionId] = Transaction(_transactionId, _studentId, _receiver, _amount, _dateTime);
+    // }
 }
