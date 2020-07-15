@@ -278,7 +278,6 @@ module.exports.signupPost = function (req, res) {
 
   //get_user()
   async function getUser(address, userName) {
-    console.log(account);
     try {
       var _user = await contract.methods.getUser(userName).call({ "from": address }, function (err, result) {
         console.log(result);

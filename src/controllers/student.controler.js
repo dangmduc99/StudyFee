@@ -184,7 +184,34 @@ module.exports.postRegisterClass = function (req, res) {
         var signed = web3.eth.account.signTransaction(tx, privateKey).then(console.log);
         var tx_hash = web3.eth.accounts.hashMessage(signed.rawTransaction);
         return tx_hash;
-    }
+	}
+	
+	async function getClass(privateKey, classId) {
+		try {
+			var _class = await contract.methods.getClass(classId).call({"from": address}, function(err, result) {
+				console.log(result);
+			})
+			if (_class[0] == '') {
+				return clasz = {};
+			}
+			return clasz = {
+				"classId": classId,
+				"subjectId": _clasz[1],
+				"subject": _clasz[2],
+				"weight": _clasz[3],
+			}
+		}
+		catch (error) {
+			console.log(error);
+		}
+	}
+
+	var fee = 0;
+	fee += clasz.weight * 400000;
+
+	async function tranfer (privateKey, fee) {
+		account = web3.eth.accounts.privateKeyToAccount(privateKey);
+	}
     res.render('student/registerclass');
 }
 
