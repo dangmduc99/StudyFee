@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.6.9;
+pragma solidity ^0.5.16;
 pragma experimental ABIEncoderV2;
 
 contract Manager {
@@ -9,8 +9,9 @@ contract Manager {
         string password;
         bool isStudent;
         string addr;
-        string publicKey;
         string privateKey;
+        string[] transactionIdList;
+        string[] classIdList;
     }
 
     struct Class {
@@ -20,23 +21,14 @@ contract Manager {
         string weight;
     }
 
-    struct Registed {
-        string userName;
-        string studyYear;
-        string[] classIdList;
-    }
-
-    struct PayFee {
-        string userName;
-        string studyYear;
+    struct Transaction {
+        string transactionId;
         string amount;
         string date;
-        string transactionId;
     }
     mapping (string => User) public users;
     mapping (string => Class) public classes;
-    mapping (string => Registed) public registeds;
-    mapping (string => PayFee) public payFees;
+    mapping (string => Transaction) public transactions;
 
 
     //for signup
@@ -44,9 +36,10 @@ contract Manager {
                     string memory _name,
                     string memory _password,
                     string memory _address,
-                    string memory _publicKey,
-                    string memory _privateKey) public {
-        users[_userName] = User(_userName, _name, _password, true, _address, _publicKey, _privateKey);
+                    string memory _privateKey,
+                    string[] memory _transactionIdList,
+                    string[] memory _classIdList) public {
+        users[_userName] = User(_userName, _name, _password, true, _address, _privateKey, _transactionIdList, _classIdList);
     }
 
 
@@ -81,7 +74,7 @@ contract Manager {
 
 
     //for edit class
-    function editSubject (string memory classId,
+    function editClass (string memory classId,
                         string memory _subjectId,
                         string memory _subject,
                         string memory _weight) public {
@@ -92,20 +85,25 @@ contract Manager {
     }
 
     //for register class
-    function registerClass (string memory _studentId,
-                        string memory _studyYear,
-                        string[] memory _classIdList) public {
-        registeds[_studentId] = Registed(_studentId, _studyYear, _classIdList);
+    function registerClass (string memory userName,
+                            string memory _classId) public {
+        User storage user = users[userName];
+        user.classIdList.push(_classId);
+    }
+
+    //for get transaction
+    function getTransaction (string memory transactionId) public view returns (Transaction memory){
+        Transaction storage transaction = transactions[transactionId];
+        return transaction;
     }
 
     //for save history
-    function payFee (string memory _userName,
-                    string memory _studyYear,
+    function transaction (string memory userName,
                     string memory _amount,
                     string memory _date,
                     string memory _transactionId) public {
-        payFees[_transactionId] = PayFee(_userName, _studyYear, _amount, _date, _transactionId);
+        transactions[_transactionId] = Transaction(_transactionId, _amount, _date);
+        User storage user = users[userName];
+        user.transactionIdList.push(_transactionId);
     }
-
-    //tranfer
 }

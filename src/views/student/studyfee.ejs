@@ -29,7 +29,7 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Payment study fee</a>
+            <a class="navbar-brand" href="/student/">Payment study fee</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,13 +37,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/student/">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register Class</a>
+                        <a class="nav-link" href="/student/registerclass">Register Class</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Study Fee</a>
+                        <a class="nav-link active" href="/student/studyfee">Study Fee</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav px-3">
@@ -57,109 +57,101 @@
 
     <div class="col-md-9" style="margin-top: 100px;">
         <div class="card">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-12">
-                <h4>Your Profile</h4>
-                <hr>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <form>
-                  <div class="form-group row">
-                    <label for="name" class="col-4 col-form-label">Name</label>
-                    <h5>Đặng Minh Đức</h5>
-                  </div>
-                  <div class="form-group row">
-                    <label for="userName" class="col-4 col-form-label">Student ID</label>
-                    <h6>20173037</h6>
-                  </div>
-                  <div class="form-group row">
-                    <label for="address" class="col-4 col-form-label">Address</label>
-                    <h6>0x123456789abcdef</h6>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Your Profile</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-group row">
+                                <label for="name" class="col-4 col-form-label">Name</label>
+                                <h5>Đặng Minh Đức</h5>
+                            </div>
+                            <div class="form-group row">
+                                <label for="userName" class="col-4 col-form-label">Student ID</label>
+                                <h6>20173037</h6>
+                            </div>
+                            <div class="form-group row">
+                                <label for="address" class="col-4 col-form-label">Address</label>
+                                <h6>0x123456789abcdef</h6>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
 
     <div class="text-center" style="margin-top: 50px;">
-        
-        <div class="form-group row">
-            <label for="select" class="col-2 col-form-label">Study Year</label>
-            <div class="col-3">
-                <select id="select" name="select" class="custom-select">
-                    <option value="20191">20191</option>
-                    <option value="20192">20192</option>
-                    <option value="20193">20193</option>
-                    <option value="20201">20201</option>
-                    <option value="20202">20202</option>
-                    <option value="20203">20203</option>
-                </select>
+
+        <div class="card">
+            <div class="card-body">
+                <h4>Thông tin học phí của sinh viên 20173037</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Subject ID</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Fee/Weight</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Sum</th>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>MI1111</td>
+                            <td>Giải tích I</td>
+                            <td>400.000</td>
+                            <td>3</td>
+                            <td>1.200.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>MI1121</td>
+                            <td>Giải tích II</td>
+                            <td>400.000</td>
+                            <td>3</td>
+                            <td>1.200.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>MI1131</td>
+                            <td>Giải tích III</td>
+                            <td>400.000</td>
+                            <td>3</td>
+                            <td>1.200.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>MI1141</td>
+                            <td>Đại số</td>
+                            <td>400.000</td>
+                            <td>3</td>
+                            <td>1.200.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <p>Sum = 4.800.000</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <h4>Thông tin học phí kỳ 20193 của sinh viên 20173037</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Subject ID</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Fee/Weight</th>
-                    <th scope="col">Weight</th>
-                    <th scope="col">Sum</th>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>MI1111</td>
-                    <td>Giải tích I</td>
-                    <td>400.000</td>
-                    <td>3</td>
-                    <td>1.200.000</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>MI1121</td>
-                    <td>Giải tích II</td>
-                    <td>400.000</td>
-                    <td>3</td>
-                    <td>1.200.000</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>MI1131</td>
-                    <td>Giải tích III</td>
-                    <td>400.000</td>
-                    <td>3</td>
-                    <td>1.200.000</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>MI1141</td>
-                    <td>Đại số</td>
-                    <td>400.000</td>
-                    <td>3</td>
-                    <td>1.200.000</td>
-                </tr>
-                <tr>
-                    <th scope="col"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <p>Sum = 4.800.000</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
     </div>
 
     <footer class="footer mt-auto py-3">
